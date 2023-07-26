@@ -1,8 +1,9 @@
 import { Router } from "express";
-
+import { userController } from "../controller/signin-controller";
 
 const signinRoute = Router()
 
-signinRoute.get('/', (req , res)=>{res.status(200).send({message:"i'm alive!"})})
+signinRoute.get('/', userController.getUser)
+
 
 export {signinRoute}
