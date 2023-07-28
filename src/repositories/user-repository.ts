@@ -4,7 +4,12 @@ import { User } from "../Utils/Models/models";
 type error = {
     message:string
 }
+const findUserById = async ()=> {
 
+
+
+    
+}
 const getUser = async  () =>   {
    
     return  await db.query (`SELECT * FROM "user"`);
