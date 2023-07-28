@@ -3,9 +3,9 @@ import { Customer } from "../Utils/Models/models";
 import { Child } from "../Utils/Models/models";
 //TODO fazer o get customers  com join depois ... 
 
-const getCustomersAndChildById = async()=>{
+const getCustomersAndChildById = async(customer_id:number) =>{
 
-    return await db.query(`select customers.name , customers.birthday , child.name , child.birthday from "customers" INNER JOIN "child" ON child.customer_id = customers.id`)
+    return await db.query(`select customers.name , customers.birthday , child.name , child.birthday from "customers" INNER JOIN "child" ON child.customer_id =  $1`, [customer_id])
 
 }
 

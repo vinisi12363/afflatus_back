@@ -1,14 +1,11 @@
 import {db} from '@/config/connectdb'
 import { User } from "../Utils/Models/models";
 
-type error = {
-    message:string
-}
-const findUserById = async ()=> {
+const findUserById = async (id:number)=> {
+
+    return await db.query(`SELECT user.id from "user" where id = $1 `, [id])
 
 
-
-    
 }
 const getUser = async  () =>   {
    
@@ -25,5 +22,6 @@ const createUser = async(newUser:User)=>{
 
 export const  userRepository  = {
     getUser,
-    createUser
+    createUser,
+    findUserById
 }
