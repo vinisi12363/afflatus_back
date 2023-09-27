@@ -10,7 +10,7 @@ const createUser = async (newUser:User) => {
         return await userRepository.createUser(newUser)
 }
 
- export const userService = {
+ export const signUpService = {
     getUser,
     createUser
 }

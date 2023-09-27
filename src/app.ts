@@ -2,18 +2,18 @@ import 'reflect-metadata';
 import 'express-async-errors';
 import express, { Express } from 'express';
 import cors from 'cors';
+import { loadEnv } from './config/envs';
+import {signInRoute ,signUpRoute, customersRoute} from '@/routers';
 
-
-
-import {signinRoute , customersRoute} from '@/routers';
-
+loadEnv();
 const app = express();
 
 app
   .use(cors())
   .use(express.json())
   .get('/health', (_req, res) => res.send('OK!'))
-  .use('/signin', signinRoute)
+  .use('/signin', signInRoute)
+  .use('/signup', signUpRoute)
   .use('/customers' , customersRoute)
 
 
