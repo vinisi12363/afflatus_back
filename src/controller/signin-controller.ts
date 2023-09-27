@@ -2,8 +2,6 @@ import { Request , Response } from "express"
 import { userService } from "@/services/user-services"
 
 const getUser = async (req:Request , res:Response) => {
-
-
     try {
         const result = await  userService.getUser()
         console.log("RESULT", result)

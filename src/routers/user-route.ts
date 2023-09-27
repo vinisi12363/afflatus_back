@@ -5,7 +5,7 @@ import { userSchema } from "../schemas/user-schema";
 
 const signinRoute = Router()
 
-signinRoute.get('/', userController.getUser)
-signinRoute.post('/',validateBody(userSchema) , userController.postUser )
+signinRoute.get('/', userController.getUser);
+signinRoute.post('/',validateBody(userSchema) , userController.postUser );
 
 export {signinRoute}
