@@ -22,7 +22,7 @@ const getCustomersAndChild = async (req:Request , res:Response) => {
 const postCustomer = async(req:Request, res:Response) => {
 
     try {
-        const result = await  customerService.insertCustomer(req.body)
+        const result = await customerService.insertCustomer(req.body)
         console.log("RESULT", result)
         return res.status(httpStatus.OK).send(result) 
     } catch (error) {

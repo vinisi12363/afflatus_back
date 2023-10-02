@@ -3,10 +3,10 @@ export type User = {
     password: string
     user_admin:boolean
   }
-
+ 
   export type Customer = {
     name:string, 
-    email:string, 
+    cpf:string, 
     address:string, 
     phone:string, 
     instagram:string , 

@@ -21,9 +21,8 @@ const getCustomers = async () => {
 
 const insertCustomer = async (customer: Customer) => {
 
-    const customerInsert = await db.query(`insert into "customers" (name, email, address, phone, instagram , birthday) 
-    values ($1 , $2,$3 , $4 , $5 , $5) RETURNING id`, [customer.name, customer.email, customer.address, customer.phone, customer.instagram, customer.birthday])
-
+    const customerInsert = await db.query(`insert into "customers" (name, cpf, address, phone, instagram , birthday) 
+    values ($1 , $2, $3 , $4 , $5, $6 ) RETURNING id`, [customer.name, customer.cpf, customer.address, customer.phone, customer.instagram, customer.birthday])
     return customerInsert.rows[0].id
 
 

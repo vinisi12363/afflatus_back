@@ -3,11 +3,12 @@ import { Customer } from "../Utils/Models/models";
 
 
 const insertCustomer = async(customer:Customer) => {
+    console.log('customer dentro da função :  ', customer);
     try {
-        const customer_id = await customersRepository.insertCustomer(customer)
-        return customer_id
+        const { id }= await customersRepository.insertCustomer(customer)
+        return id;
     } catch (error) {
-        throw error
+        throw error;
     }
 }
 

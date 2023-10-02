@@ -3,10 +3,10 @@ import { Customer } from "@/Utils/Models/models";
 
 export const customerSchema = Joi.object<Customer>({
    name:Joi.string().required(),
-   email:Joi.string(),
+   cpf:Joi.string().required().min(11),
    address:Joi.string(),
    phone:Joi.string().required().min(11),
    instagram:Joi.string(),
-   birthday:Joi.date()
+   birthday:Joi.string()
  });
   
