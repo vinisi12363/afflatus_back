@@ -9,7 +9,7 @@ export type User = {
     cpf:string, 
     address:string, 
     phone:string, 
-    instagram:string , 
+    instagram:string, 
     birthday:Date
   }
 
@@ -23,4 +23,5 @@ export type User = {
   export type SpecialDate = {
     description:string, 
     specialDate:Date,
+    child_id:number
   }

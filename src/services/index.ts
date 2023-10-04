@@ -1,2 +1,6 @@
 export * from './signUp-services'
 export * from './customers-services'
+export * from './signIn-services'
+export * from './specialDate-services'
+export * from './children-services'
+export * from './events-services'

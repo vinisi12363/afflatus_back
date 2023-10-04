@@ -1,3 +1,6 @@
 export * from './customers-controller'
 export * from './signin-controller'
 export * from './signup-controller'
+export * from './specialDate-constroller'
+export * from './childs-controller'
+export * from './events-controller'
