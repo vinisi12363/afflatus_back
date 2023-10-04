@@ -11,7 +11,14 @@ const insertCustomer = async(customer:Customer) => {
         throw error;
     }
 }
+const findAll = async () => {
+    try {
+        return await customersRepository.getCustomers();
+    } catch (error) {
+        throw error;
+    }
 
+}
 const findCustomersAndChildById = async (id:number)=>{
     try {
         const result  = await customersRepository.getCustomersAndChildById(id)
@@ -30,7 +37,8 @@ const findCustomersAndChildById = async (id:number)=>{
 
  export const customerService = {
     insertCustomer,
-    findCustomersAndChildById
+    findCustomersAndChildById,
+    findAll
 
 
 }

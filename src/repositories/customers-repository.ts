@@ -15,10 +15,20 @@ WHERE customers.id = $1;`, [customer_id])
 
 const getCustomers = async () => {
 
-    return await db.query(`SELECT * FROM "customers"`)
+      try {
+        return await db.query(`SELECT * FROM "customers"`);
+      } catch (error) {
+        throw error;
+      }
 
 }
-
+const findAll = async () => {
+    try {
+        return await db.query(`SELECT * FROM "customers"`)
+    } catch (error) {
+        throw error;
+    }
+}
 const insertCustomer = async (customer: Customer) => {
 
     const customerInsert = await db.query(`insert into "customers" (name, cpf, address, phone, instagram , birthday) 
@@ -32,5 +42,6 @@ const insertCustomer = async (customer: Customer) => {
 export const customersRepository = {
     getCustomers,
     getCustomersAndChildById,
-    insertCustomer
+    insertCustomer,
+    findAll 
 }

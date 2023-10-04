@@ -16,6 +16,7 @@ export type User = {
   export type Child = {
     name:string,
     birthday:Date,
+    customer_id:number
   }
 
 

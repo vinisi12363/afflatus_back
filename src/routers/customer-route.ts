@@ -7,6 +7,7 @@ import { customerSchema } from "../schemas/customer-schema";
 const customersRoute = Router()
 
 customersRoute.post('/' , validateBody(customerSchema), customerController.postCustomer)
+customersRoute.get('/' , customerController.getAllCustomers)
 customersRoute.get('/:id', customerController.getCustomersAndChild)
 
 

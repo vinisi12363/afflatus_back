@@ -3,7 +3,7 @@ import 'express-async-errors';
 import express, { Express } from 'express';
 import cors from 'cors';
 import { loadEnv } from './config/envs';
-import {signInRoute ,signUpRoute, customersRoute} from '@/routers';
+import {signInRoute ,signUpRoute, customersRoute, childsRoute} from '@/routers';
 
 loadEnv();
 const app = express();
@@ -15,6 +15,7 @@ app
   .use('/signin', signInRoute)
   .use('/signup', signUpRoute)
   .use('/customers' , customersRoute)
+  .use('/child' , childsRoute)
 
 
 const port = process.env.port || 4000
