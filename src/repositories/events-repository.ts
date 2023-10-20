@@ -15,7 +15,12 @@ export const getEvents = async () => {
 
 };
 
+async function postEvents(body: any) {
+    return await db.query(`INSERT INTO "SpecialDate" (child_id, description, special_date) VALUES ($1, $2, $3)`, [body.child_id, body.description, body.special_date]);
+}
+
+
 
 export const eventsRepository = {
-    getEvents
+    getEvents, postEvents
 }

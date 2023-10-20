@@ -8,8 +8,16 @@ const getEvents = async () => {
         throw error;
     }
 }
+const postEvents = async (body: any) => {
+    try {
+        return await eventsRepository.postEvents(body);
+    } catch (error) {
+        throw error;
+    }
+}
 
 
 export const eventsService = {
-    getEvents
+    getEvents, 
+    postEvents,
 };

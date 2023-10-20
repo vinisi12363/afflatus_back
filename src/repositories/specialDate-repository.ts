@@ -6,7 +6,7 @@ const insertSpecialDate = async (data:SpecialDate)=>{
 
     const specialDateId = await db.query(
       `INSERT INTO "SpecialDate" (description , specialDate, child_id) VALUES ($1 , $2)  RETURNING id`,
-      [data.description, data.specialDate, data.child_id]
+      [data.description, data.special_date, data.child_id]
     );
 
     return specialDateId.rows[0].id

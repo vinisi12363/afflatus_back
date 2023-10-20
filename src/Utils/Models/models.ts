@@ -22,6 +22,6 @@ export type User = {
 
   export type SpecialDate = {
     description:string, 
-    specialDate:Date,
+    special_date:Date,
     child_id:number
   }
