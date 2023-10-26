@@ -29,6 +29,7 @@ export async function getChildrensByCustomerId(req: Request, res: Response) {
    try {
      const result = await childService.findChildByParentId(Number(req.body));
      console.log("RESULT", result);
+     console.log(result);
      return res.status(httpStatus.OK).send(result);
    } catch (error) {
      console.log("ERRO", error);
